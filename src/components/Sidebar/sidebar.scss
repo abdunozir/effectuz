@@ -1,5 +1,5 @@
 .sidebar {
-  width: 18%;
+  width: 260px;
   height: 100%;
 
   &__logobox {
@@ -9,7 +9,8 @@
   }
 
   &__logo {
-
+    width: 167px;
+    height: 41px;
   }
 
   &__nav {

@@ -12,12 +12,13 @@ import FotoNews from "./FotoNews";
 export default function Main() {
   return(
     <div className="main">
-      <Header />
-      <Navbar />
-      <News />
-      <MainAside />
-      <TopNews />
-      <FotoNews />
+      <div className="main__box">
+        <Header />
+        <Navbar />
+        <News />
+        <MainAside />
+        <TopNews />
+      </div>
     </div>
   )
 }
