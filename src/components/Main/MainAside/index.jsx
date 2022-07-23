@@ -1,7 +1,7 @@
 import React from "react";
 
 // style
-import './aside.scss'
+import './mainaside.scss'
 
 export default function MainAside() {
   return (

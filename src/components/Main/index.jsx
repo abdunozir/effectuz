@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 // style
 import './Main.scss'
 import News from "./News";
-import MainAside from "./Aside";
+import MainAside from "./MainAside";
 import TopNews from "./TopNews";
 import FotoNews from "./FotoNews";
 

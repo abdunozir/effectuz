@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './assets/style/style.scss'
+import Aside from './components/Aside'
 import Banner from './components/Banner'
 import Footer from './components/Footer'
 import Main from './components/Main'
@@ -14,6 +15,7 @@ function App() {
       <div className='d-flex'>
         <Sidebar />
         <Main />
+        <Aside />
       </div>
       <FotoNews />
       <VideoNews />
