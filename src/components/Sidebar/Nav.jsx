@@ -10,22 +10,31 @@ import video from '../../assets/icons/sidebar/video.svg'
 import rukn from '../../assets/icons/sidebar/rukn.svg'
 import menu from '../../assets/icons/sidebar/menu.svg'
 
+//translation
+import "../../i18next"
+import { useTranslation } from "react-i18next";
+
+
+
 
 export default function Nav() {
+
+  const {t, i18n} = useTranslation()
+
   return (
     <nav className="sidebar__nav">
       <ul className="sidebar__nav-list" id="accordionFlushExample">
         <NavLink to="/" className="sidebar__nav-link">
           <li className="">
             <div className="sidebar__nav-item sidebar__nav-active">
-              <img className="sidebar__nav-icon" src={home} alt="" /> Bosh sahifa
+              <img className="sidebar__nav-icon" src={home} alt="" /> {t('boshsahifa')}
             </div>
           </li>
         </NavLink>
         <NavLink to="/" className="sidebar__nav-link">
           <li className="">
             <div className="sidebar__nav-item">
-              <img className="sidebar__nav-icon" src={menu} alt="" /> Yangiliklar lentasi
+              <img className="sidebar__nav-icon" src={menu} alt="" /> {t('Yangi-lentasi')}
             </div>
           </li>
         </NavLink>
@@ -39,21 +48,21 @@ export default function Nav() {
         <NavLink to="/" className="sidebar__nav-link">
           <li className="">
             <div className="sidebar__nav-item">
-              <img className="sidebar__nav-icon" src={audio} alt="" /> Audio xabarlar
+              <img className="sidebar__nav-icon" src={audio} alt="" /> {t('Audio-xabar')}
             </div>
           </li>
         </NavLink>
         <NavLink to="/" className="sidebar__nav-link">
           <li className="">
             <div className="sidebar__nav-item">
-              <img className="sidebar__nav-icon" src={video} alt="" /> Video xabarlar
+              <img className="sidebar__nav-icon" src={video} alt="" /> {t('Video-xabar')}
             </div>
           </li>
         </NavLink>
         <li className="" id="flush-headingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
           <div className="sidebar__nav-item">
             <i className='sidebar__nav-icon bx bx-globe'></i>
-            Hududlar
+            {t('Hudud')}
             <i className='bx bx-chevron-right sidebar__nav-right'></i>
           </div>
           <Hudud />

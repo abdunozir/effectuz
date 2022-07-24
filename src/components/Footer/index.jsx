@@ -10,7 +10,14 @@ import gplay from '../../assets/icons/footer/google-play.svg'
 import appStore from '../../assets/icons/footer/app-store.svg'
 import windowStore from '../../assets/icons/footer/window-store.svg'
 
+//translation
+import "../../i18next"
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+
+  const {t, i18n} = useTranslation()
+
   return (
     <footer className="footer">
       <div className="footer__logobox">
@@ -61,23 +68,26 @@ export default function Footer() {
               <ul className="footer__list">
                 <li className="footer__item">Hududlar</li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Toshkent</Link>
+                  <Link className="footer__nav-link" to="/">{t ('qoraqalpoq')}</Link>
                 </li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Samarqand</Link>
+                  <Link className="footer__nav-link" to="/">{t ('toshkent')}</Link>
                 </li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Qashqadaryo</Link>
+                  <Link className="footer__nav-link" to="/">{t ('andijon')}</Link>
                 </li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Hosting</Link>
+                  <Link className="footer__nav-link" to="/">{t ('buxora')}</Link>
                 </li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Developers</Link>
+                  <Link className="footer__nav-link" to="/">{t ('jizzax')}</Link>
                 </li>
                 <li className="footer__item">
-                  <Link className="footer__nav-link" to="/">Support</Link>
+                  <Link className="footer__nav-link" to="/">{t ('qashqadaryo')}</Link>
                 </li>
+                <li className="footer__item">
+                  <Link className="footer__nav-link" to="/">{t ('navoiy')}</Link>
+                </li> 
               </ul>
             </li>
             <li className="footer__nav-item">

@@ -1,9 +1,15 @@
+import i18next from "i18next";
 import React from "react";
 
 // style
 import './asideHeader.scss'
 
 export default function AsideHeader() {
+
+  const changeLangueage = (lng) => {
+    i18next.changeLanguage(lng)
+  }
+
   return (
     <>
       <div className="aside__settings">
@@ -11,11 +17,11 @@ export default function AsideHeader() {
           <button className="aside__whitebtn"><i className='bx bxs-sun'></i></button>
           <button className="aside__nightbtn"><i className='bx bxs-moon'></i></button>
         </div>
-        <select className="aside__langbox" name="lang">
-          <option className="aside__langbtn" value="ozbekcha">O'zbek</option>
-          <option className="aside__langbtn" value="engilsh">Engilsh</option>
-          <option className="aside__langbtn" value="russkiy">Русский</option>
-          <option className="aside__langbtn" value="uzbek">Ўзбек</option>
+        <select onChange={(e) => changeLangueage(e.target.value)} className="aside__langbox" name="lang">
+          <option className="aside__langbtn" value="uz">O'zbek</option>
+          <option className="aside__langbtn" value="eng">Engilsh</option>
+          <option className="aside__langbtn" value="ru">Русский</option>
+          <option className="aside__langbtn" value="kiril">Ўзбек</option>
         </select>
       </div>
 

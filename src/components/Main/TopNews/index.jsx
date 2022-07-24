@@ -3,7 +3,14 @@ import React from "react";
 // style
 import './topnews.scss'
 
+//translation
+import "../../../i18next"
+import { useTranslation } from "react-i18next";
+
 export default function TopNews() {
+
+  const {t, i18n} = useTranslation()
+
   return (
     <section className="topnews">
       <ul className="topnews__list">
@@ -105,7 +112,7 @@ export default function TopNews() {
         </li>
       </ul>
       <div className="topnews__btnbox">
-        <button className="topnews__btn">Barcha yangiliklar</button>
+        <button className="topnews__btn">{t ("barcha")}</button>
       </div>
     </section>
   )

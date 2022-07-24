@@ -4,28 +4,21 @@ import { Link } from "react-router-dom";
 // style
 import './videonews.scss'
 
+
+//translation
+import "../../i18next"
+import { useTranslation } from "react-i18next";
+
 // images
 import play from '../../assets/icons/video-play.svg'
-// import right from '../../assets/icons/right.svg'
-let right = `
-  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g clip-path="url(#clip0_71_3435)">
-  <path d="M5.81122 13.337H20.5696" stroke="#072D4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16.353 17.5507L20.5697 13.337" stroke="#072D4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16.353 9.12329L20.5697 13.337" stroke="#072D4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <defs>
-  <clipPath id="clip0_71_3435">
-  <rect width="25.3001" height="25.2822" fill="white" transform="translate(0.540344 0.695923)"/>
-  </clipPath>
-  </defs>
-  </svg>
-`
 
 export default function VideoNews() {
+
+  const {t, i18n} = useTranslation()
+
   return (
     <section className="videonews">
-      <h2 className="videonews__title">Video Yangiliklar</h2>
+      <h2 className="videonews__title">{t ('vdyangi')}</h2>
       <div className="videonews__box">
         <div className="videonews__videobox">
           <Link to="">
@@ -156,7 +149,7 @@ export default function VideoNews() {
 
 
           </ul>
-          <Link className="videonews__link" to="/">Bo'limga o'tish <svg width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link className="videonews__link" to="/">{t ('otish')} <svg width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_71_3435)">
               <path d="M5.81122 13.337H20.5696" stroke="#072D4B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M16.353 17.5507L20.5697 13.337" stroke="#072D4B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

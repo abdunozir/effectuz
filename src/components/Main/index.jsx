@@ -7,7 +7,6 @@ import './Main.scss'
 import News from "./News";
 import MainAside from "./MainAside";
 import TopNews from "./TopNews";
-import FotoNews from "./FotoNews";
 
 export default function Main() {
   return(

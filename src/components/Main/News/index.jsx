@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import './news.scss'
 
 export default function News() {
+  
   return(
     <section className="news">
       <div className="news__left">
