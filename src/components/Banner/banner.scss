@@ -34,9 +34,11 @@
     height: 55px;
     object-fit: cover;
     margin-right: 21px;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
-  &__ {
-
-  }
 }
