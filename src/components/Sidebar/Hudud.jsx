@@ -8,7 +8,7 @@ import API from "../../API/API";
 
 export default function Hudud() {
 
-  const { t, i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
 
   const [data, setData] = useState([])
 
@@ -27,11 +27,13 @@ export default function Hudud() {
   }, [])
 
   return (
-    <ul className="sidebar__list collapse" id="flush-collapseTwo" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+    <ul className="sidebar__list collapse" id="panelsStayOpen-collapseTwo" aria-labelledby="panelsStayOpen-headingTwo">
       {
         data.map((item, key) => {
           return(
-            <NavLink key={key+531} className="sidebar__link" to="/">
+            <NavLink key={key+531} to={`/${item.id+8}`} className={({ isActive }) =>
+            isActive ? "sidebar__link sidebar__link-active" : "sidebar__link"
+          }>
               <li className="sidebar__item">
                 <span className="sidebar__line"></span>
                 {item.name}

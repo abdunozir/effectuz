@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 // style
 import './news.scss'
+import NewsItem from "./NewsItem";
 
 export default function News() {
-  
+
   return(
     <section className="news">
       <div className="news__left">
@@ -28,62 +29,7 @@ export default function News() {
       </div>
 
       <ul className="news__list">
-        <li className="news__item">
-          <Link className="d-flex" to="/">
-            <div className="news__list-box">
-              <div className="news__list-time">
-              <i className='bx bxs-calendar-alt' ></i>
-                11:45  <span className="news__list-line"></span>  13.07.2022
-              </div>
-              <h4 className="news__list-title">Card hover bo'lganda box-shadow o'zgarishi va color</h4>
-            </div>
-            <div className="news__list-imgbox">
-              <img className="news__list-img" src="https://picsum.photos/id/641/71/70" alt="news" />
-            </div>
-          </Link>
-        </li>
-        <li className="news__item">
-          <Link className="d-flex" to="/">
-            <div className="news__list-box">
-              <div className="news__list-time">
-              <i className='bx bxs-calendar-alt' ></i>
-                11:45  <span className="news__list-line"></span>  13.07.2022
-              </div>
-              <h4 className="news__list-title">Card hover bo'lganda box-shadow o'zgarishi va color</h4>
-            </div>
-            <div className="news__list-imgbox">
-              <img className="news__list-img" src="https://picsum.photos/id/641/71/70" alt="news" />
-            </div>
-          </Link>
-        </li>
-        <li className="news__item">
-          <Link className="d-flex" to="/">
-            <div className="news__list-box">
-              <div className="news__list-time">
-              <i className='bx bxs-calendar-alt' ></i>
-                11:45  <span className="news__list-line"></span>  13.07.2022
-              </div>
-              <h4 className="news__list-title">Card hover bo'lganda box-shadow o'zgarishi va color</h4>
-            </div>
-            <div className="news__list-imgbox">
-              <img className="news__list-img" src="https://picsum.photos/id/641/71/70" alt="news" />
-            </div>
-          </Link>
-        </li>
-        <li className="news__item">
-          <Link className="d-flex" to="/">
-            <div className="news__list-box">
-              <div className="news__list-time">
-              <i className='bx bxs-calendar-alt'></i>
-                11:45  <span className="news__list-line"></span>  13.07.2022
-              </div>
-              <h4 className="news__list-title">Card hover bo'lganda box-shadow o'zgarishi va color</h4>
-            </div>
-            <div className="news__list-imgbox">
-              <img className="news__list-img" src="https://picsum.photos/id/641/71/70" alt="news" />
-            </div>
-          </Link>
-        </li>
+        <NewsItem />
       </ul>
     </section>
   )

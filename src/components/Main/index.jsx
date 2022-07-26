@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import Navbar from "./Navbar";
 
 // style
@@ -9,15 +8,20 @@ import MainAside from "./MainAside";
 import TopNews from "./TopNews";
 
 export default function Main() {
-  return(
-    <div className="main">
-      <div className="main__box">
-        <Header />
-        <Navbar />
-        <News />
-        <MainAside />
-        <TopNews />
-      </div>
-    </div>
+  return (
+    <>
+      <News />
+      <MainAside />
+      <TopNews />
+    </>
+
+    // <div className="main">
+    //   <div className="main__box">
+    //     <Navbar />
+    //     <News />
+    //     <MainAside />
+    //     <TopNews />
+    //   </div>
+    // </div>
   )
 }

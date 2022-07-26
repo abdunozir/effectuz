@@ -1,106 +1,167 @@
 .newslenta {
     width: 771px;
+    min-height: 100vh;
     background-color: #fff;
     padding: 15px 18px 43px 28px;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
+    margin-bottom: 60px;
 
- &__left,
- &__right{
-    width: 50%;
-    height: 2px;
-    background-color: #0768B5;
-    display: inline-block;
-  }
-
- &__time{
-    padding: 0 6px;
+  &__date {
+    display: flex;
+    align-items: center;
+    font-family: 'Gosha Sans';
     font-weight: 700;
     font-size: 16px;
-    color: #072D4B;
-  }
+    line-height: 19px;
+    color: #072d4b;
+    margin-bottom: 10px;
 
- &__list{
-    border-left: 2px solid #c7c8ca;
-    margin-left: 35px;
-
-    li{
-      padding: 11px 14px;
-      cursor: pointer;
-      border-bottom: 2px solid #c7c8ca;
-      padding-bottom: 20px;
-      position: relative;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-
-      &:hover{
-        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;
-
-        h4{
-          color: #0768B5;
-        }
-      }
-
-      &::before{
-        content: "";
-        width: 11px;
-        height: 11px;
-        background-image: url('../../assets/icons/time-hover.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: absolute;
-        left: -12px;
-        top: 32px;
-      }
-
-      &:hover::before{
-        z-index: 22;
-      }
-
-      &:hover span{
-        color: #999;
-        font-size: 12.5px;
-        font-weight: 500;
-      }
-
-      h4{
-        color: #072d4b;
-        font-size: 17px;
-        font-weight: 500;
-        line-height: 24px;
-        transition: all 0.3s ease;
-      }
-
-      p{
-        position: relative;
-        top: 27px;
-        color: #072d4b;
-        opacity: 0.4;
-        font-size: 13px;
-      }
-
+    & p {
+      margin: 0 6px;
     }
   }
 
- &__list-img{
-    margin-right: 25px;
-    margin-left: 14px;
+  &__hr {
+    height: 2px;
+    background-color: #0768b5;
+    border-radius: 10px;
+    flex-grow: 1;
   }
 
- &__list-time{
+  &__list {
+    padding-left: 30px;
+    margin-bottom: 27px;
+  }
+
+  &__item {
+    position: relative;
+    border-left: 1px solid #c7c8ca;
+    border-bottom: 1px solid #c7c8ca;
+    padding: 20px 0 20px 20px;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 37px;
+      left: -9px;
+      width: 17px;
+      height: 17px;
+      background-image: url('../../assets/icons/time.svg');
+      background-color: #fff;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+    &:hover::before {
+      background-image: url('../../assets/icons/time-hover.svg');
+    }
+
+    &:hover .newslenta__box {
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+
+      & .newslenta__title {
+        color: #0768b5;
+      }
+    }
+
+    &:hover .newslenta__time {
+      color: #999;
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__time {
     position: absolute;
+    top: 37px;
     left: -45px;
-    top: 35px;
-    color: #c6c6c6;
+    font-family: 'Gosha Sans';
     font-size: 12px;
+    line-height: 14px;
+    color: #c6c6c6;
+    transition: all 0.4s ease;
+  }
+
+  &__box {
+    display: flex;
+    border-radius: 4px;
+    padding: 11px 14px;
+    transition: all 0.4s ease;
+  }
+
+  &__imgbox {
+    display: block;
+    width: 134px;
+    height: 132px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__titlebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  &__title {
+    width: 471px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: #072d4b;
+    transition: all 0.4s ease;
+    margin: auto 0;
+  }
+  &__catebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    line-height: 22px;
+    color: #072d4b;
+    opacity: 0.4;
+  }
+
+  &__comment {
+    position: relative;
+    top: 1px;
+    font-size: 11px;
+    margin-right: 3px;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: 1px solid #072d4b;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #072d4b;
+    padding: 10px 30px;
     transition: all 0.4s ease;
 
-  }
-
- &__list-clock{
-    position: absolute;
-    left: -13px;
-    top: 31px;
+    &:hover {
+      background-color: #072d4b;
+      border-color: #072d4b;
+      color: #fff;
+    }
   }
 }

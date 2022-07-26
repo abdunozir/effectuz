@@ -14,11 +14,6 @@ import logo from '../../assets/icons/logo.svg'
 export default function Sidebar() {
   return (
     <section className="sidebar">
-      <div className="sidebar__logobox">
-        <Link to="/">
-        <img className="sidebar__logo" src={logo} alt="logo" />
-        </Link>
-      </div>
       <Nav />
     </section>
   )

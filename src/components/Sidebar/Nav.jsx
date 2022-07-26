@@ -35,7 +35,7 @@ export default function Nav() {
 
   return (
     <nav className="sidebar__nav">
-      <ul className="sidebar__nav-list" id="accordionFlushExample">
+      <ul className="sidebar__nav-list" id="accordionPanelsStayOpenExample">
         <NavLink to="/" className={({ isActive }) =>
           isActive ? "sidebar__nav-active" : ""
         }>
@@ -47,7 +47,7 @@ export default function Nav() {
             {t('boshsahifa')}
           </li>
         </NavLink>
-        <NavLink to="/s" className={({ isActive }) =>
+        <NavLink to="/newslenta" className={({ isActive }) =>
           isActive ? "sidebar__nav-active" : ""
         }>
           <li className="sidebar__nav-item">
@@ -62,8 +62,8 @@ export default function Nav() {
             {t('Yangi-lentasi')}
           </li>
         </NavLink>
-        <li onClick={() => setRukn(!rukn)} className='' id="flush-headingOne" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          <div className={`sidebar__nav-item ${rukn ? "sidebar__nav-active" : ''}`}>
+        <li className=''>
+          <div onClick={() => setRukn(!rukn)} className={`sidebar__nav-item ${rukn ? "sidebar__nav-active" : ''}`} id="panelsStayOpen-headingOne" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
             <svg className="sidebar__nav-icon" width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 4H5C4.44772 4 4 4.44772 4 5V9C4 9.55228 4.44772 10 5 10H9C9.55228 10 10 9.55228 10 9V5C10 4.44772 9.55228 4 9 4Z" stroke={rukn ? "#2f9ff8" : 'black'} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
               <path d="M19 4H15C14.4477 4 14 4.44772 14 5V9C14 9.55228 14.4477 10 15 10H19C19.5523 10 20 9.55228 20 9V5C20 4.44772 19.5523 4 19 4Z" stroke={rukn ? "#2f9ff8" : 'black'} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
@@ -99,8 +99,8 @@ export default function Nav() {
             {t('Video-xabar')}
           </li>
         </NavLink>
-        <li onClick={() => setHudud(!hudud)} className="" id="flush-headingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          <div className={`sidebar__nav-item ${hudud ? "sidebar__nav-active" : ''}`}>
+        <li className="">
+          <div onClick={() => setHudud(!hudud)} className={`sidebar__nav-item ${hudud ? "sidebar__nav-active" : ''}`} id="panelsStayOpen-headingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
             <i className={`sidebar__nav-icon bx bx-globe ${hudud ? "sidebar__nav-iconactiv" : ''}`}></i>
             {t('Hudud')}
             <i className='bx bx-chevron-right sidebar__nav-right'></i>

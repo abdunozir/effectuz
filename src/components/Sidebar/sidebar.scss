@@ -1,17 +1,7 @@
 .sidebar {
   width: 260px;
   height: 100%;
-
-  &__logobox {
-    padding-top: 13px;
-    padding-left: 48px;
-    margin-bottom: 26px;
-  }
-
-  &__logo {
-    width: 167px;
-    height: 41px;
-  }
+  padding-top: 3px;
 
   &__nav-list {
     margin-right: 11px;
@@ -132,4 +122,13 @@
       margin-right: 10px;
   }
 
+  &__link-active {
+
+    & .sidebar__item {
+
+      & .sidebar__line {
+        width: 20px;
+      }
+    }
+  }
 }
