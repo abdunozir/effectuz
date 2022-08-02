@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 //translation
 import "../../i18next"
 import { useTranslation } from "react-i18next";
-import API from "../../API/API";
+import GET from "../../API/GET";
 
 export default function Hudud() {
 
@@ -14,7 +14,7 @@ export default function Hudud() {
 
   const useCategory = async () => {
     try {
-      const provence = await API.provence()
+      const provence = await GET.provence()
       setData(provence.data)
     }catch (err) {
       console.log(err)

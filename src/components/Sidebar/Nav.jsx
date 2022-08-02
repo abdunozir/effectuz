@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Hudud from "./Hudud";
 import Rukn from "./Rukn";
+import API from "../../API/API";
 
 //translation
 import "../../i18next"
 import { useTranslation } from "react-i18next";
-import API from "../../API/API";
 
 export default function Nav() {
   const [data, setData] = useState([])
@@ -75,7 +75,7 @@ export default function Nav() {
           </div>
           <Rukn />
         </li>
-        <NavLink to="/d" className={({ isActive }) =>
+        <NavLink to="/audionews" className={({ isActive }) =>
           isActive ? "sidebar__nav-active" : ""
         }>
           <li className="sidebar__nav-item">
@@ -88,7 +88,7 @@ export default function Nav() {
             {t('Audio-xabar')}
           </li>
         </NavLink>
-        <NavLink to="/v" className={({ isActive }) =>
+        <NavLink to="/informer" className={({ isActive }) =>
           isActive ? "sidebar__nav-active" : ""
         }>
           <li className="sidebar__nav-item">

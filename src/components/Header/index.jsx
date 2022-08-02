@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import i18next from "i18next";
 
 //translation
 import "../../i18next"
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 // style
 import './Header.scss'

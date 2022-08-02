@@ -7,7 +7,7 @@ import './navbar.scss'
 //translation
 import "../../../i18next"
 import { useTranslation } from "react-i18next";
-import API from "../../../API/API";
+import GET from "../../../API/GET";
 
 export default function Navbar() {
 
@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const useCategory = async () => {
     try {
-      const category = await API.category()
+      const category = await GET.category()
       setData(category.data)
     }catch (err) {
       console.log(err)

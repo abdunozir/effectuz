@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 //API
-import API from "../../API/API";
+import GET from "../../API/GET";
 
 //translation
 import "../../i18next"
@@ -16,7 +16,7 @@ export default function Rukn() {
 
   const useCategory = async () => {
     try {
-      const category = await API.category()
+      const category = await GET.category()
       setData(category.data)
     }catch (err) {
       console.log(err)
@@ -33,7 +33,7 @@ export default function Rukn() {
       {
         data.map((item, key) => {
           return(
-            <NavLink key={key+741} to={`/${item.id+7}`} className={({ isActive }) =>
+            <NavLink key={key+741} to={`/rukunlar`} className={({ isActive }) =>
             isActive ? "sidebar__link sidebar__link-active" : "sidebar__link"
           }>
               <li className="sidebar__item">

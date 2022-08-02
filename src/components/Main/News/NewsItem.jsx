@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import API from "../../../API/API";
+import POST from "../../../API/POST";
 
 export default function NewsItem() {
 
-  let ads = ["1", "3", "3", "4"];
-
   const [data, setData] = useState([])
+
+  let params = {
+    count: 4
+  }
 
   const newsItem = async () => {
     try{
-      const response = await API.news_item();
-      setData(response)
+      const response = await POST.news_item(params);
+      setData(response.data.items.slice(0, params.count))
     }catch(err) {
       console.log(err)
       return
@@ -23,24 +25,23 @@ export default function NewsItem() {
     newsItem()
   },[])
 
-  console.log(data)
-
   return(
     <>
       {
-        ads.map((item, key) => {
+        data.map((item, key) => {
           return(
             <li key={key+123} className="news__item">
-              <Link className="d-flex" to="/">
+              <Link className="d-flex" to={`post/${item.id}`}>
                 <div className="news__list-box">
                   <div className="news__list-time">
                     <i className='bx bxs-calendar-alt' ></i>
-                    11:45  <span className="news__list-line"></span>  13.07.2022
+                    {/* <span className="news__list-line"></span>  */}
+                    {item.created_date}
                   </div>
-                  <h4 className="news__list-title">Card hover bo'lganda box-shadow o'zgarishi va color</h4>
+                  <h4 className="news__list-title">{item.title_uz.slice(0,43)}...</h4>
                 </div>
                 <div className="news__list-imgbox">
-                  <img className="news__list-img" src="https://picsum.photos/id/641/71/70" alt="news" />
+                  <img className="news__list-img" src={item.default_img} alt="news" />
                 </div>
               </Link>
             </li>
