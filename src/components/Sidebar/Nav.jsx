@@ -88,7 +88,7 @@ export default function Nav() {
             {t('Audio-xabar')}
           </li>
         </NavLink>
-        <NavLink to="/informer" className={({ isActive }) =>
+        <NavLink to="/videonews" className={({ isActive }) =>
           isActive ? "sidebar__nav-active" : ""
         }>
           <li className="sidebar__nav-item">

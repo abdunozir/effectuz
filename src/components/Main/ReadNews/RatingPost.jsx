@@ -48,9 +48,9 @@ export default function RatingPost({news}) {
       <div className="readnews__share">
         <div className="readnews__share-left">
           <p>{t ("ulashing")}</p>
-          <button className="readnews__share-btns"><i className='readnews__tg bx bxl-telegram'></i></button>
-          <button className="readnews__share-btns"><i className='readnews__fb bx bxl-facebook'></i></button>
-          <button className="readnews__share-btns"><i className='readnews__tw bx bxl-twitter'></i></button>
+          <a href={`https://telegram.me/share/url?url=${location}`} target="_blank" className="readnews__share-btns"><i className='readnews__tg bx bxl-telegram'></i></a>
+          <a href={`https://www.facebook.com/sharer.php?u=${location}`} target="_blank" className="readnews__share-btns"><i className='readnews__fb bx bxl-facebook'></i></a>
+          <a href={`https://twitter.com/intent/tweet?text=${location}`} target="_blank" className="readnews__share-btns"><i className='readnews__tw bx bxl-twitter'></i></a>
         </div>
 
         <div className="readnews__share-right">

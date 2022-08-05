@@ -5,9 +5,8 @@ import GET from "../../../API/GET";
 import '../../../i18next'
 
 
-export default function RukunItems() {
+export default function HududItems() {
   let {id} = useParams()
-
   const { t, i18n } = useTranslation()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
@@ -15,8 +14,9 @@ export default function RukunItems() {
   const newsItem = async () => {
     try{
       setLoading(false)
-      const response = await GET.news_category(id);
-      setData(response.data.items.slice(0, 10))
+      const response = await GET.news_provence(+id);
+      // setData(response.data.items.slice(0, 10))
+      setData(response)
       setLoading(true)
     }catch(err) {
       console.log(err)
@@ -28,6 +28,9 @@ export default function RukunItems() {
     newsItem()
   },[id])
 
+  console.log(data)
+
+  let a = ["","",""]
 
   if(! loading) {
     return <h1>Loading</h1>
@@ -44,7 +47,7 @@ export default function RukunItems() {
 
         <ul className="newslenta__list">
           {
-            data.map((item, key) => {
+            a.map((item, key) => {
               return (
                 <li key={key+364} className="newslenta__item">
                   <span className="newslenta__time">19:35</span>

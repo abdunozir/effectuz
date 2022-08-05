@@ -31,7 +31,7 @@ export default function Hudud() {
       {
         data.map((item, key) => {
           return(
-            <NavLink key={key+531} to={`/${item.id+8}`} className={({ isActive }) =>
+            <NavLink key={key+531} to={`/hududlar/${item.id}`} className={({ isActive }) =>
             isActive ? "sidebar__link sidebar__link-active" : "sidebar__link"
           }>
               <li className="sidebar__item">

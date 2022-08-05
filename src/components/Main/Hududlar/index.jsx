@@ -7,13 +7,13 @@ import Header from "../../Header";
 import Sidebar from "../../Sidebar";
 import MainAside from "../MainAside";
 import News from "../News";
-import RukunItems from "./Rukunlar";
+import { useParams } from "react-router-dom";
+import HududItems from "./HududItem";
 
 // style
 import '../../NewsLenta/newslenta.scss'
-import { useParams } from "react-router-dom";
 
-export default function Rukunlar() {
+export default function Hududlar() {
   let {id} = useParams()
   const { t, i18n } = useTranslation()
   const [category, setCategory] = useState([])
@@ -21,7 +21,7 @@ export default function Rukunlar() {
 
   const newsItem = async () => {
     try{
-      const response = await GET.category();
+      const response = await GET.provence();
       setCategory(...response.data.filter(item => item.id == id))
     }catch(err) {
       console.log(err)
@@ -33,6 +33,7 @@ export default function Rukunlar() {
     newsItem()
   },[id])
 
+
   return(
     <>
     <div className='container'>
@@ -41,10 +42,10 @@ export default function Rukunlar() {
         <Sidebar />
         <div className="main">
           <div className="main__box">
-            <h2 className="main__title">{i18n.language === "uz" ? category.name_uz : i18n.language === "ru" ? category.name_ru : i18n.language === "kiril" ? category.name_oz : category.name_uz}</h2>
+            <h2 className="main__title">{i18n.language === "uz" ? category.name : i18n.language === "ru" ? category.name : i18n.language === "kiril" ? category.name : category.name}</h2>
             <News />
             <MainAside />
-            <RukunItems />
+            <HududItems />
           </div>
         </div>
         <Aside />

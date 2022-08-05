@@ -26,7 +26,7 @@ export default function TopRead() {
         data.map((itme, key) => {
           return (
             <li key={key+134} className="topread__item">
-              <Link to={`post/${itme.id}`}>
+              <Link to={`/post/${itme.id}`}>
                 <p className="topread__time"><i className='bx bx-calendar-event bx-flip-horizontal'></i> {itme.created_date}</p>
                 <h3 className="topread__subtitle">{i18n.language === "uz" ? itme.title_uz : i18n.language === "ru" ? itme.title_ru : i18n.language === "kiril" ? itme.title_oz : ""}</h3>
               </Link>

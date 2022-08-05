@@ -31,7 +31,6 @@ export default function Main() {
           </div>
           <Aside />
         </div>
-        <FotoNews />
         <VideoNews />
         <Banner />
         <Footer />

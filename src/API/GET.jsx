@@ -22,10 +22,10 @@ const NEW = "https://simply.uz/api/new?id";                        // 1ta yangil
 const NEWS_VIDEO = "https://simply.uz/api/news-video";             // faqat videolar yuboradi
 const REPORTER = "https://simply.uz/api/reporter?id=6";            // 1ta xodim haqida malumot beradi
 const MORE = "https://simply.uz/api/more";                         // Eng ko'p o'qilganlar
-const VOICE_ONE = "https://simply.uz/api/voice-one?id=1";          // 1ta audio news qaytaradi
+const VOICE_ONE = "https://simply.uz/api/voice-one?id";          // 1ta audio news qaytaradi
 const VOICES = "https://simply.uz/api/voices";                     // all audio newslarni qaytaradi
-const NEWS_CATEGORY = "https://simply.uz/api/news-category?id=2";  // catergoryalarga oid yangilklarnni chiqarish
-const NEWS_PROVENCE = "https://simply.uz/api/news-provence?id=2";  // viloyatlar bo'yicha yangilklarni qaytaradi
+const NEWS_CATEGORY = "https://simply.uz/api/news-category?id";    // catergoryalarga oid yangilklarnni chiqarish
+const NEWS_PROVENCE = "https://simply.uz/api/news-provence?id";  // viloyatlar bo'yicha yangilklarni qaytaradi
 
 
 const GET = {
@@ -37,10 +37,10 @@ const GET = {
   news_video: () => axios.get(NEWS_VIDEO, headers),
   reporter: () => axios.get(REPORTER, headers),
   news_top_10: () => axios.get(MORE, headers),
-  voice_one: () => axios.get(VOICE_ONE, headers),
+  voice_one: (id) => axios.get(`${VOICE_ONE}=${id}`, headers),
   voices: () => axios.get(VOICES, headers),
-  news_category: () => axios.get(NEWS_CATEGORY, headers),
-  news_provence: () => axios.get(NEWS_PROVENCE, headers),
+  news_category: (id) => axios.get(`${NEWS_CATEGORY}=${id}`, headers),
+  news_provence: (id) => axios.get(`${NEWS_PROVENCE}=${id}`, headers),
 }
 
 export default GET;

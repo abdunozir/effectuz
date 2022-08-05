@@ -33,7 +33,7 @@ export default function Rukn() {
       {
         data.map((item, key) => {
           return(
-            <NavLink key={key+741} to={`/rukunlar`} className={({ isActive }) =>
+            <NavLink key={key+741} to={`/rukunlar/${item.id}`} className={({ isActive }) =>
             isActive ? "sidebar__link sidebar__link-active" : "sidebar__link"
           }>
               <li className="sidebar__item">

@@ -14,8 +14,8 @@ import telegrams from '../../../assets/icons/icons8-telegram-app.svg'
 
 export default function AsideHeader() {
 
-  let {id} = useParams()
-  let [data, setData] = useState()
+  let { id } = useParams()
+  let [data, setData] = useState([])
 
   const newItem = async () => {
     try {
@@ -32,16 +32,14 @@ export default function AsideHeader() {
     newItem()
   }, [])
 
-  console.log(data)
-
   return (
     <>
       <ul className="aside__blist">
-        <li className="aside__bitem"><a href="http://" target="_blank"><img src={facebooks} alt="facebook" width="40" height="40" /></a></li>
-        <li className="aside__bitem"><a href="" target="_blank"><img src={twitters} alt="twitter" width="40" height="40" /></a></li>
-        <li className="aside__bitem"><a href="http://" target="_blank"><img src={instagrams} alt="intagram" width="40" height="40" /></a></li>
+        <li className="aside__bitem"><a href="#" target="_blank"><img src={facebooks} alt="facebook" width="40" height="40" /></a></li>
+        <li className="aside__bitem"><a href={`https://twitter.com/${ typeof(data) !== "undifined" ? data.twitter : "/"}`} target="_blank"><img src={twitters} alt="twitter" width="40" height="40" /></a></li>
+        <li className="aside__bitem"><a href={`https://instagram.com/${ typeof(data) !== "undifined" ? data.instagram : "/"}`} target="_blank"><img src={instagrams} alt="intagram" width="40" height="40" /></a></li>
         <li className="aside__bitem"><a href="http://" target="_blank"><img src={youtubes} alt="youtube" width="40" height="40" /></a></li>
-        <li className="aside__bitem"><a href="http://" target="_blank"><img src={telegrams} alt="telegram" width="40" height="40" /></a></li>
+        <li className="aside__bitem"><a href={`https://t.me/${ typeof(data) !== "undifined" ? data.telegram : "/"}`} target="_blank"><img src={telegrams} alt="telegram" width="40" height="40" /></a></li>
 
       </ul>
     </>
